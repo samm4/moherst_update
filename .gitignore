@@ -1,0 +1,7 @@
+/vendor
+/node_modules
+.env
+.idea
+
+wp-config.php
+.htaccess

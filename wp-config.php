@@ -22,7 +22,7 @@ define('DB_NAME', 'moherst_update');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'shs123');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
