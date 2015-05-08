@@ -10,12 +10,12 @@ function smartline_enqueue_scripts() {
 
 	// Get Theme Options from Database
 	$theme_options = smartline_theme_options();
-	
 	// Register and Enqueue Stylesheet
 	wp_enqueue_style('smartline-lite-stylesheet', get_stylesheet_uri());
-	
+	wp_enqueue_style('custom', get_stylesheet_uri());
 	// Register Genericons
 	wp_enqueue_style('smartline-lite-genericons', get_template_directory_uri() . '/css/genericons/genericons.css');
+	wp_enqueue_style('smartline-lite-custom', get_template_directory_uri() . '/css/customer.css');
 
 	// Register and Enqueue FlexSlider JS and CSS if necessary
 	if ( ( isset($theme_options['slider_activated_blog']) and $theme_options['slider_activated_blog'] == true )
@@ -163,24 +163,24 @@ if ( ! function_exists( 'smartline_register_sidebars' ) ):
 function smartline_register_sidebars() {
 
 	// Register Sidebars
-//	register_sidebar( array(
-//		'name' => __( 'Sidebar', 'smartline-lite' ),
-//		'id' => 'sidebar',
-//		'description' => __( 'Appears on posts and pages except front page and fullwidth template.', 'smartline-lite' ),
-//		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-//		'after_widget' => '</aside>',
-//		'before_title' => '<h3 class="widgettitle"><span>',
-//		'after_title' => '</span></h3>',
-//	));
-//	register_sidebar( array(
-//		'name' => __( 'Magazine Front Page', 'smartline-lite' ),
-//		'id' => 'frontpage-magazine',
-//		'description' => __( 'Appears on Magazine Front Page page template only. You can use the Category Posts widgets here.', 'smartline-lite' ),
-//		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-//		'after_widget' => '</div>',
-//		'before_title' => '<h3 class="widgettitle">',
-//		'after_title' => '</h3>',
-//	));
+	register_sidebar( array(
+		'name' => __( 'Sidebar', 'smartline-lite' ),
+		'id' => 'sidebar',
+		'description' => __( 'Appears on posts and pages except front page and fullwidth template.', 'smartline-lite' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widgettitle"><span>',
+		'after_title' => '</span></h3>',
+	));
+	register_sidebar( array(
+		'name' => __( 'Magazine Front Page', 'smartline-lite' ),
+		'id' => 'frontpage-magazine',
+		'description' => __( 'Appears on Magazine Front Page page template only. You can use the Category Posts widgets here.', 'smartline-lite' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widgettitle">',
+		'after_title' => '</h3>',
+	));
 
 }
 endif;
